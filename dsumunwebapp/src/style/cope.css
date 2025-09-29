@@ -1,0 +1,510 @@
+.cope-about-card {
+    margin-bottom: 50px;
+    border: none;
+    transition: transform 0.3s ease;
+    background-color: white; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Ensure spacing inside the card */
+}
+
+.cope-about-card:hover {
+    transform: scale(1.05);
+}
+
+
+.cope-about-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    width: 100%;
+    background-position: center;
+    background-image: url("/img/modelun_2.jpg"); /* Adjust the background image */
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cope-about-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/modelun_2.jpg"); /* Adjust the background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(9px);
+    transform: scale(1.04);
+    z-index: -1;
+}
+
+.dsumun2 .dsumun2-card {
+    width: 26vw;
+    height: 45vh;
+    margin: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.dsumun2 .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+
+.dsumun2 .card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.dsumun2 .card-front,
+.dsumun2 .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: white;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Front Side */
+.dsumun2 .card-front {
+    border: 1px solid #ddd;
+}
+
+/* Back Side */
+.dsumun2 .card-back {
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 30px;
+}
+
+/* Title & Image */
+.dsumun2 .card-img-comittee {
+    max-width: 70%;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+.card-img-comittee {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.dsumun2 .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Agenda Styling */
+.dsumun2 .agenda-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.dsumun2 .agenda-text {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Spacing & Separators */
+.dsumun2 .separator-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.dsumun2 .separator {
+    width: 50px;
+    height: 50px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dsumun2 .card {
+        width: 450px;
+        height: 400px;
+    }
+
+    .dsumun2 .card-title {
+        font-size: 1.2rem;
+    }
+
+    .dsumun2 .agenda-title {
+        font-size: 1.5rem;
+    }
+
+    .dsumun2 .agenda-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .dsumun2 .card {
+        width: 450px;
+        height: 400px;
+    }
+    .dsumun2-card {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dsumun2-card {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .committee-header{
+        padding-left: 20px;
+    }
+
+    .dsumun2-card {
+        margin-left: 30px !important;
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+.cope-card-body {
+    font-family: 'museo-sans';
+    color: black; /* Ensure good readability */
+    font-size: 16px;
+    text-align: justify;
+}
+
+.cope-card-text {
+    font-family: 'museo-sans';
+    font-size: 18px;
+}
+
+.cope-title {
+    font-weight: bolder;
+    font-family: 'museo-sans';
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    z-index: 2;
+}
+
+/* GENERAL STYLES */
+.cope-gallery {
+    margin-top: 40px;
+}
+
+/* IMAGE HOVER EFFECTS */
+.gallery-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* MODAL STYLES */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal-img {
+    width: 80%;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    color: #00204A;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+img.cope2-logo{
+    min-width: 500px;
+}
+
+.close-btn:hover {
+    background: #FFD700;
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    .cope-about-container{
+        margin-top: 30%;
+        margin-left: 0.2vh;
+        margin-bottom: 5%;
+    }
+
+    img.cope2-logo{
+    min-width: 300px;
+}
+
+
+    .cope-title {
+        font-size: 4vw;
+    }
+
+    .cope-card-text{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cope-about-container{
+        margin-top: 30%;
+        margin-left: 0.2vh;
+        margin-bottom: 20%;
+    }
+    .cope-about-card {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .gallery-img {
+        max-height: 200px;
+    }
+
+    .cope-title {
+        font-size: 4vw;
+    }
+
+    .cope-card-text{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .cope-about-container{
+        margin-top: 30%;
+        margin-left: 0.2vh;
+        margin-bottom: 20%;
+    }
+
+    .cope-about-card {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .gallery-img {
+        max-height: 180px;
+    }
+
+    .cope-title {
+        font-size: 5vw;
+    }
+
+    .cope-card-text{
+        font-size: 12px;
+    }
+}
+
+/* COPE2 Banner Styling */
+.cope2-Banner {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height for desktop */
+    display: flex;
+    flex-direction: column; /* Stack content and button */
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center;
+    overflow: hidden;
+    padding: 5%;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Zoomed-in video */
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Dark overlay */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 50% darkness */
+    z-index: 1; /* Keeps it above the video */
+}
+
+/* Content layout */
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Above the overlay */
+    height: auto;
+    margin-top: 10%;
+}
+
+.cope2-landing {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cope2-logo {
+    max-width: 300px;
+    height: auto;
+}
+
+.left-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.img-dsu, .img-org {
+    max-width: 200px;
+    height: auto;
+}
+
+.divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Register buttons */
+.register-cope2 {
+    position: absolute;
+    bottom: 15%;
+    width: 100%;
+    z-index: 3;
+}
+
+.btn-register {
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
+    color: white;
+    padding: 15px 30px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.btn-register:hover {
+    background: linear-gradient(135deg, #357ABD, #2A5A8A);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.cope-com {
+    max-width: 100%;
+}
+
+img.cope-com{
+    width: 100%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .cope2-Banner {
+        height: 70vh;
+        padding: 3%;
+    }
+
+    .cope-card-body{
+        max-width: 90%;
+    }
+    
+    .cope2-logo {
+        max-width: 200px;
+    }
+    
+    .img-dsu, .img-org {
+        max-width: 120px;
+    }
+    
+    .cope2-landing {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .register-cope2 {
+        bottom: 10%;
+    }
+    
+    .btn-register {
+        font-size: 14px;
+        padding: 12px 25px;
+        margin: 5px;
+    }
+}

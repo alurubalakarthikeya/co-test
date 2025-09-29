@@ -1,0 +1,7 @@
+.home-card{
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effect */
+}
+.home-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}

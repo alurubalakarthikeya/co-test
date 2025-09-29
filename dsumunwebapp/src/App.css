@@ -1,0 +1,29 @@
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #00204A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeOut 1s ease-out 1.2s forwards; /* Fades out after 1.2s */
+  }
+  
+  #loading-logo {
+    width: 200px;
+    height: 200px;
+    animation: pulse 1s infinite alternate; /* Light to dark effect */
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    100% { opacity: 0; visibility: hidden; }
+  }
+  

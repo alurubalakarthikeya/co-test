@@ -1,0 +1,56 @@
+@font-face{
+	font-family: 'museo';
+	src: url('Museo.otf');
+}
+
+@font-face{
+	font-family: 'museo-sans';
+	src: url('MuseoSans.otf');
+}
+
+
+.footer {
+	font-family: 'museo';
+	color: white;
+	background-color: #00204A;
+	text-align: center;
+	width: 100%;
+	padding: 20px;
+    position: relative;
+    bottom: 0;
+}
+
+
+.fa {
+  padding: 10px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-instagram {
+  color: white;
+}
+
+.fa-linkedin {
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .footerlogo{
+    width: 10vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerlogo{
+    width: 10vh;
+  }
+}

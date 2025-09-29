@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "dsumunwebapp",
+			"path": "."
+		},
+		{
+			"name": "co-test-1",
+			"path": "../../co-test-1"
+		}
+	],
+	"settings": {}
+}

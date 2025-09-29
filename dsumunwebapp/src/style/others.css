@@ -1,0 +1,42 @@
+
+
+
+@media (max-width: 1024px) {
+    .others-header{
+        margin-top: 30% !important;
+    }
+
+    .card {
+        margin: 0 auto;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+
+
+@media (max-width:768px) {
+    .others-header{
+        margin-top: 30% !important;
+    }
+
+    .card {
+        margin: 0 auto;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+@media (max-width:480px) {
+    .others-header{
+        margin-top: 30% !important;
+    }
+    .others-title{
+        margin-top: 20% !important;
+    }
+    .card {
+        margin: 0 auto;
+        width: 90%; /* Adjust width for better mobile fit */
+        text-align: center;
+    }
+}

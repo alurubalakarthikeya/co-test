@@ -1,0 +1,228 @@
+@font-face{
+	font-family: 'museo';
+	src: url('Museo.otf');
+}
+
+@font-face{
+	font-family: 'museo-sans';
+	src: url('MuseoSans.otf');
+}
+
+
+/* Left column styling */
+.left-col {
+    background-image: url('/img/MODEL_UNITED_NATIONS.png');
+    box-shadow: inset -20px 0 30px -10px rgba(42, 42, 42, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    object-fit:scale-down;
+    overflow: hidden;
+}
+
+/* Left column leak effect */
+.left-col::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -40px; /* Extend further into the carousel */
+    width: 100px; /* Increase width for a more gradual transition */
+    height: 100%;
+    z-index: 2;
+}
+
+/* Right column leak effect */
+.carousel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40px; /* Extend into the left column */
+    width: 100px; /* Increase width for better blending */
+    height: 100%;
+    filter: blur(75px); /* Match blur level with left column */
+    z-index: 2;
+}
+
+/* Transparent blending layer */
+.blend-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Center between both columns */
+    transform: translateX(-50%);
+    width: 150px; /* Wider blending area */
+    height: 100%;
+    filter: blur(40px); /* Strong blur for ultra-smooth transition */
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Carousel styling */
+.carousel, .carousel-item, .carousel-item img {
+    height: 100vh; /* Full viewport height */
+    object-fit: cover;
+    position: relative; /* Needed for the overlay */
+}
+
+
+
+/* Text styling */
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+/* Button styling */
+.btn-register {
+    background-color: #FFD700; /* Golden color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    z-index: 1;
+    border: 2px solid #FFD700;
+}
+
+.btn-register:hover {
+    background: transparent; /* Ensure background stays transparent */
+    color: #FFD700; /* Text turns golden */
+    border-color: #FFD700; /* Keep the border yellow */
+}
+
+/* Remove border animation */
+.btn-register:hover::before,
+.btn-register:hover::after {
+    animation: none;
+}
+
+.home-logo {
+    width: 15vh; /* Adjust size as needed */
+    margin-left: 1.5vh;
+    margin-top: 40%;
+    max-width: 80%;
+    height: auto;
+}
+/* Ensure button adjusts well */
+#home-btn {
+    width: fit-content;
+    text-align: center;
+    margin-top: auto; /* Pushes it down naturally */
+    padding: 10px 20px;
+}
+
+.dsumun2-home-img {
+    margin-top: -10% !important;
+    width: 100%;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+    .dsumun2-home-img img {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    .btn-register {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    .carousel-item img {
+        height: 50vh;
+    }
+
+    .container-md img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #home-btn{
+        width: fit-content;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-logo {
+        text-align: center;
+        max-width: 120px;
+        margin-top: 80%;
+    }
+
+    .btn-register {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .dsumun2-home-img img {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: auto;
+        text-align: center;
+
+    }
+
+    .container-md img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .dsumun2-home-img{
+        width: 500px;
+    }
+
+    #home-btn{
+        width: fit-content;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 60%;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .carousel-container {
+        display: none !important;
+    }
+
+    .dsumun2-home-img img {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    .btn-register {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    .container-md img {
+        width: 30px;
+        height: 30px;
+    }
+
+    #home-btn{
+        width: fit-content;
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 60%;
+    }
+
+    .left-col{
+        width : 100vw;
+    }
+}

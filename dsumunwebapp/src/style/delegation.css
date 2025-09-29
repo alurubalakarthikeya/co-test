@@ -1,0 +1,124 @@
+
+/* Centering text in mobile view */
+.text-center {
+    text-align: center;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 10px;
+}
+
+.card-text {
+    font-size: 20px;
+    text-align: justify;
+}
+
+/* Center separator */
+.gallery-sep img {
+    display: block;
+    margin: auto;
+}
+
+@media (max-width: 1024px) {
+    .delegation-header h1 {
+        font-size: 2rem;
+        margin-top: 20% !important;
+        margin-bottom: 20%;
+    }
+
+    .card-text {
+        font-size: 18px;
+        text-align: center;
+    }
+    .card {
+        width: 90%; /* Adjust width for better mobile fit */
+        text-align: center;
+    }
+
+    /* Center text and elements */
+    .carousel-inner img {
+        height: 300px;
+        object-fit: contain;
+    }
+
+    .carousel {
+        max-height: 300px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .gallery-sep img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .delegation-header h1 {
+        font-size: 2rem;
+        margin-top: 30%;
+        margin-bottom: 20%;
+    }
+
+    .card-text {
+        font-size: 18px;
+        text-align: center;
+    }
+    .card {
+        width: 90%; /* Adjust width for better mobile fit */
+        text-align: center;
+    }
+
+    /* Center text and elements */
+    .carousel-inner img {
+        height: 300px;
+        object-fit: contain;
+    }
+
+    .carousel {
+        max-height: 300px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .gallery-sep img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .delegation-header{
+        margin-top: 30%;
+        font-size: 1.8rem;
+        margin-bottom: 20%;
+    }
+
+    .card-text {
+        font-size: 16px;
+    }
+
+    .card {
+        margin: 0 auto;
+        width: 90%; /* Adjust width for better mobile fit */
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .gallery-sep img {
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -1,0 +1,68 @@
+@font-face{
+	font-family: 'museo';
+	src: url('Museo.otf');
+}
+
+@font-face{
+	font-family: 'museo-sans';
+	src: url('MuseoSans.otf');
+}
+
+
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link {
+        color: white;
+    }
+    .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255,255,255,.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); 
+    }
+    #dsu-munsoc{
+        margin-left: 10px;
+    }
+}
+
+
+.nav-link{
+	font-family: 'museo';
+	color: white;
+	font-size: 22px;
+	padding: 10px;
+	transition: background-color 0.5s ease, color 0.5s ease;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.dropdown-menu {
+    background-color: #00204A !important;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    display: none;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+.dropdown-item {
+    font-family: 'museo';
+    color: white !important;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #FFD700 !important;
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: #FFD700;
+    color: white;
+    border-radius: 10px;
+}

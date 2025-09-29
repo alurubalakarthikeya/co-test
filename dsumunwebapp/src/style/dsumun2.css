@@ -1,0 +1,808 @@
+/* Scoped to DSUMUN2 to prevent conflicts */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+
+.dsumun2 .dsumun2-card {
+    width: 26vw;
+    height: 45vh;
+    margin: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.dsumun2 .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+
+.dsumun2 .card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.dsumun2 .card-front,
+.dsumun2 .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: white;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Front Side */
+.dsumun2 .card-front {
+    border: 1px solid #ddd;
+}
+
+/* Back Side */
+.dsumun2 .card-back {
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 30px;
+}
+
+/* Title & Image */
+.dsumun2 .card-img-comittee {
+    max-width: 70%;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+.card-img-comittee {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.dsumun2 .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Agenda Styling */
+.dsumun2 .agenda-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.dsumun2 .agenda-text {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Spacing & Separators */
+.dsumun2 .separator-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.dsumun2 .separator {
+    width: 50px;
+    height: 50px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dsumun2 .card {
+        width: 450px;
+        height: 400px;
+    }
+
+    .dsumun2 .card-title {
+        font-size: 1.2rem;
+    }
+
+    .dsumun2 .agenda-title {
+        font-size: 1.5rem;
+    }
+
+    .dsumun2 .agenda-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .dsumun2 .card {
+        width: 450px;
+        height: 400px;
+    }
+    .dsumun2-card {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dsumun2-card {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .committee-header{
+        padding-left: 20px;
+    }
+
+    .dsumun2-card {
+        margin-left: 30px !important;
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+
+.committee-header{
+    font-family:"museo";
+    font-weight:"bold";
+    color: white;
+    margin-bottom: 50px;
+}
+
+.dsumun2-Banner {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height for desktop */
+    display: flex;
+    flex-direction: column; /* Stack content and button */
+    justify-content: flex-start; /* Align content at the top */
+    align-items: center;
+    overflow: hidden;
+    padding: 5%;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Zoomed-in video */
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Dark overlay */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 50% darkness */
+    z-index: 1; /* Keeps it above the video */
+}
+
+
+/* Content layout */
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+
+/* Left side - Logo */
+.left-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 2 00px;
+}
+
+.dsumun2-logo {
+    width: 100%;
+    max-width: 850px;
+}
+
+
+/* Adjust Image Sizes */
+.img-dsu {
+    width: 20vh;
+    max-width: 150px;
+}
+
+.img-org{
+    width: 25vh;
+    max-width: 250px;
+}
+
+
+
+.right-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+#dsumun2_background_btn {
+    margin-left: 20px;
+}
+
+
+/* Tablets & Medium Screens */
+@media (max-width: 1366px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-logo, .right-images {
+        width: 100%;
+    }
+
+    .dsumun2-logo {
+        margin-top: 20%;
+        width: 450px;
+        margin-bottom: 30px;
+    }
+
+    .divider-line {
+        width: 100px;
+        height: 3px;
+        margin: 30px 0;
+    }
+
+    .img-dsu, .img-org {
+        width: 80px;
+    }
+
+    .register-dsumun2 {
+        position: relative;
+        z-index: 10;
+        margin-top: 30px;
+    }
+
+    #dsumun2_registration_btn,
+    #dsumun2_background_btn {
+        margin: 14px;
+        font-size: 20px;
+        width: 80%;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-logo, .right-images {
+        width: 100%;
+    }
+
+    .dsumun2-logo {
+        margin-top: 20%;
+        width: 250px;
+        margin-bottom: 30px;
+    }
+
+    .divider-line {
+        width: 100px;
+        height: 3px;
+        margin: 30px 0;
+    }
+
+    .img-dsu, .img-org {
+        width: 80px;
+    }
+
+    .register-dsumun2 {
+        position: relative;
+        z-index: 10;
+        margin-top: 30px;
+    }
+
+    #dsumun2_registration_btn,
+    #dsumun2_background_btn {
+        margin: 14px;
+        font-size: 20px;
+        width: 50%;
+    }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+    .dsumun2-Banner {
+        height: 100vh;
+    }
+
+    .dsumun2-logo {
+        margin-top: 25%;
+        width: 200px;
+    }
+
+    .divider-line {
+        width: 60px;
+        height: 2px;
+    }
+
+    .img-dsu, .img-org {
+        width: 50px;
+    }
+
+    .register-dsumun2 {
+        position: relative;
+        z-index: 10;
+        margin-top: 40px;
+    }
+
+    #dsumun2_registration_btn,
+    #dsumun2_background_btn {
+        /*margin: 14px;*/
+        font-size: 10px;
+        width: 40%;
+    }
+}
+
+
+/* ABOUT DSU MUN STYLING*/
+
+.dsumun2-about-card {
+    margin-bottom: 150px;
+    border: none;
+    transition: transform 0.3s ease;
+    background-color: white; /* Add background color */
+    border-radius: 10px; /* Optional: rounded corners */
+    height: 30vh;
+    width: 50vw;
+    padding: 10px;
+}
+
+.dsumun2-about-card:hover {
+    transform: scale(1.05);
+
+}
+
+.dsumun2-about-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+    background-position: center;
+    background-image: url("/img/AboutBg.jpg");
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.dsumun2-about-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/img/AboutBg.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    transform: scale(1.04);
+    z-index: -1;
+}
+
+.dsumun2-card-body {
+    font-family: 'museo-sans';
+    color: black; /* Changed from white to black for visibility */
+    font-size: 16px;
+}
+
+.dsumun2-card-text {
+    font-family: 'museo-sans';
+    font-size: 18px;
+}
+
+
+.dsumun2-title {
+    font-weight: bolder;
+    font-family: museo-sans;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .dsumun2-about-container{
+        align-items: center;
+        margin-left: 0.5%;
+        margin-top: 15%;
+        margin-bottom: 35%;
+    }
+    .dsumun2-about-card {
+        width: 85%;
+    }
+
+    .dsumun2-title {
+        font-size: 45px;
+    }
+
+    .dsumun2-card-text{
+        font-size: 20px;
+    }
+}
+
+/* --- Breakpoint: 992px --- */
+@media (max-width: 992px) {
+
+    .dsumun2-about-container{
+        align-items: center;
+        margin-left: 0.5%;
+        margin-top: 15%;
+        margin-bottom: 35%;
+    }
+    .dsumun2-card-text{
+        font-size: 17px;
+    }
+
+    .dsumun2-about-card {
+        width: 95%;
+        padding: 15px;
+        margin-bottom: 40px;
+    }
+
+    .dsumun2-title {
+        font-size: 40px;
+    }
+
+}
+
+/* --- Breakpoint: 768px (Tablets) --- */
+@media (max-width: 768px) {
+
+    .dsumun2-about-container{
+        align-items: center;
+        margin-left: 0.5%;
+        margin-top: 15%;
+        margin-bottom: 35%;
+    }
+
+    .dsumun2-about-card {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .dsumun2-title {
+        font-size: 35px;
+    }
+
+    .dsumun2-card-text{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .dsumun2-about-container{
+        align-items: center;
+        margin-left: 0.5%;
+        margin-bottom: 25%;
+    }
+
+    .dsumun2-about-card{
+        width: 100% !important;
+        height: auto !important;
+        margin-bottom: 150px !important;
+    }
+    .dsumun2-card-text{
+        font-size: 14px;
+    }
+    .dsumun2-title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+}
+
+
+.committees-dsumun2{
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    background-image: url("/img/Mapping_the_night.jpg");
+    padding: 20px;
+}
+
+
+.dsumun2-prizepool-one, .dsumun2-prizepool-two {
+    font-family: 'museo-sans';
+    font-weight: bolder;
+    background-image: url("/img/Mapping_the_night.jpg");
+    background-size: cover;
+    background-attachment: fixed; /* Makes background stay in place */
+    -webkit-background-clip: text;
+    background-size: 50%;
+    color: transparent;
+    overflow: hidden;
+}
+
+.dsumun2-prizepool-one {
+    font-size: 8vw;
+}
+
+.dsumun2-prizepool-two {
+    font-size: 12vw;
+}
+
+@media (max-width: 768px) {
+    .dsumun2-prizepool-one, .dsumun2-prizepool-two {
+        background-size: cover;
+        overflow: hidden;
+        word-wrap: break-word; /* Ensure long words break to the next line */
+        white-space: normal; /* Allow text to wrap to the next line */
+        max-width: 100vw; /* Ensure the container does not exceed the viewport width */
+    }
+
+    .dsumun2-prizepool-one {
+        font-size: 10vw;
+    }
+
+    .dsumun2-prizepool-two {
+        font-size: 15vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .dsumun2-prizepool-one, .dsumun2-prizepool-two {
+        background-size: cover;
+        overflow: hidden;
+        word-wrap: break-word; /* Ensure long words break to the next line */
+        white-space: normal; /* Allow text to wrap to the next line */
+        max-width: 100vw; /* Ensure the container does not exceed the viewport width */
+    }
+
+    .dsumun2-prizepool-one {
+        font-size: 10vw;
+    }
+
+    .dsumun2-dsumun2-prizepool-two {
+        font-size: 15vw;
+    }
+}
+
+
+/* Selection Container */
+.selection-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Selection Card */
+.selection-card {
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: #f8f9fa;
+    text-align: center;
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover & Selection Effects */
+.selection-card:hover {
+    background: #ebbc51;
+}
+
+.selection-card:hover .item-name,
+.selection-card:hover .icon {
+    color: white;
+}
+
+.selection-card.selected {
+    border-color: #ebbc51;
+    background: #ebbc51;
+}
+
+.selection-card.selected .item-name,
+.selection-card.selected .icon {
+    color: white;
+}
+
+/* Disabled State */
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    filter: grayscale(60%);
+}
+
+/* Icon Styling */
+.icon {
+    font-size: 100px;
+    color: #ebbc51; /* Default color */
+    transition: color 0.3s ease-in-out;
+}
+
+.selection-card:hover .icon,
+.selection-card.selected .icon {
+    color: white;
+}
+
+/* Item Name */
+.item-name {
+    color: #00204A;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.selection-card.selected .item-name {
+    color: white;
+}
+
+/* Background */
+.dsumun2-registration {
+    background-image: url("/img/background.png");
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+
+.register-dsumun2-btn{
+    padding:20px;
+    font-size:30px;
+    font-family:"museo";
+    font-weight:"bold";
+    margin-bottom:100px;
+}
+
+.dsu-logo-college{
+    width: 150px;
+}
+
+
+/* Button styling */
+.btn-terms {
+    background-color: #FFD700; /* Golden color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    z-index: 1;
+    border: 2px solid #FFD700;
+}
+
+.btn-terms:hover {
+    background: transparent; /* Ensure background stays transparent */
+    color: #FFD700; /* Text turns golden */
+    border-color: #FFD700; /* Keep the border yellow */
+}
+
+/* Remove border animation */
+.btn-terms:hover::before,
+.btn-terms:hover::after {
+    animation: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .selection-card {
+        width: 260px;
+        height: 320px;
+    }
+
+    .icon {
+        font-size: 200px;
+    }
+
+    .item-name {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .selection-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selection-card {
+        width: 90%;
+        height: auto;
+        padding: 25px;
+    }
+
+    .icon {
+        font-size: 200px;
+    }
+
+    .item-name {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dsu-logo-college{
+        width: 70%;
+    }
+    .selection-card {
+        width: 70% !important;
+        height: auto !important;
+        padding: 20px;
+    }
+
+    .icon {
+        font-size: 150px;
+    }
+
+    .item-name {
+        font-size: 30px;
+    }
+
+    .register-dsumun2-btn{
+        margin-left: 10px;
+    }
+
+    
+    #student{
+        margin: 20px !important;
+    }
+
+    #college{
+        margin: 20px !important;
+    }
+
+    #participation{
+        margin: 20px !important;
+    }
+}
+
+
+#student{
+    margin: 100px;
+}
+
+#college{
+    margin: 100px;
+}
+
+#participation{
+    margin: 100px;
+}

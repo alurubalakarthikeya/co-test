@@ -1,0 +1,405 @@
+/* Executive Board Header */
+.eb-header {
+    margin-top: 10rem;
+    margin-bottom: 5.5rem;
+}
+
+/* Executive Board Members Container */
+.eb-members-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ensures 2 cards per row */
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px; /* Wider container */
+    margin: 0 auto;
+}
+
+/* EB Member Card */
+.eb-member-card {
+    width: 100%; /* Full width of grid cell */
+    max-width: 600px; /* Slightly wider cards */
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.eb-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* EB Member Image - Full Cover */
+.eb-member-card-img {
+    width: 100%;
+    height: 400px; /* Ensures full coverage */
+    object-fit: cover;
+    display: block;
+}
+
+/* EB Member Role - Below Card */
+.eb-role {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    font-family: "museo", sans-serif;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.eb-members-container .eb-member-card:nth-child(3):last-child {
+    grid-column: span 2; /* Keeps it centered */
+    justify-self: center; /* Centers it properly */
+    width: 100%; /* Keeps the width consistent */
+    max-width: 450px; /* Ensures same size as others */
+}
+
+.eb-member-card{
+    height: 450px;
+}
+
+.exec-row{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.eb-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Name inside overlay */
+.eb-name {
+    color: white;
+    font-size: 2rem !important;
+    font-weight: bold;
+    font-family: "museo", sans-serif;
+    text-align: center;
+}
+
+/* Show overlay on hover */
+.eb-member-card-img-container:hover .eb-overlay {
+    opacity: 1;
+}
+
+/* EB Member Role - Below Card */
+.eb-role {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    font-family: "museo", sans-serif;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.eb-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    padding: 10px;
+}
+
+.eb-member-card:hover .eb-overlay {
+    opacity: 1;
+}
+
+.eb-overlay h5 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.eb-overlay p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.dsumun2-card-eb {
+    width: 30vw;
+    height: 80vh;
+    margin: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-inner-eb {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.dsumun2-card-eb:hover .card-inner-eb {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.card-front-eb,
+.card-back-eb {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: white;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Front Side */
+.card-front-eb {
+    border: 1px solid #ddd;
+}
+
+/* Back Side */
+.card-back-eb {
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 30px;
+}
+
+/* Title & Image */
+.card-img-comittee-eb {
+    width: 350px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.card-title-eb {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Agenda Styling */
+.agenda-title-eb {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.agenda-text-eb {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .dsumun2-card-eb {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dsumun2-card-eb {
+        max-width: 350px;
+        height: auto;
+    }
+
+    .card-title-eb {
+        font-size: 1.2rem;
+    }
+
+    .agenda-title-eb {
+        font-size: 1.5rem;
+    }
+
+    .agenda-text-eb {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .committee-header-eb {
+        padding-left: 20px;
+    }
+
+
+    .dsumun2-card-eb {
+        margin-left: 30px !important;
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .committee-col-eb {
+        display: none; /* Hide left column on mobile */
+    }
+ 
+
+    .mobile-committee-title {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        font-family: "museo";
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .eb-members-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .third-card{
+        width: 90%; /* Make all cards the same width on mobile */
+        width: 300px !important;
+        height: auto; /* Allow flexible height */
+    }
+
+    .eb-member-card {
+        width: 300px;  /* Adjust as needed */
+        height: auto; /* Adjust as needed */
+        position: relative;
+        overflow: hidden;
+    }
+
+    .eb-member-card-img {
+        height: 250px; /* Consistent height for images */
+    }
+
+}
+
+@media (max-width: 992px) {
+    .committee-col-eb {
+        display: none; /* Hide left column on mobile */
+    }
+
+
+    .mobile-committee-title {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        font-family: "museo";
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .eb-members-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .third-card{
+        width: 90%; /* Make all cards the same width on mobile */
+        max-width: 300px;
+        height: auto; /* Allow flexible height */
+    }
+
+    .eb-member-card {
+        width: 300px;  /* Adjust as needed */
+        height: auto; /* Adjust as needed */
+        position: relative;
+        overflow: hidden;
+    }
+    
+
+    .eb-member-card-img {
+        height: 250px; /* Consistent height for images */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .committee-col-eb {
+        display: none; /* Hide left column on mobile */
+    }
+
+
+    .mobile-committee-title {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        font-family: "museo";
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .eb-members-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .eb-member-card .third-card{
+        width: 90%; /* Make all cards the same width on mobile */
+        max-width: 300px;
+        height: auto; /* Allow flexible height */
+    }
+
+
+    .eb-member-card-img {
+        height: 250px; /* Consistent height for images */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .committee-col-eb {
+        display: none; /* Hide left column on mobile */
+    }
+
+    .mobile-committee-title {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        font-family: "museo";
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .eb-members-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .eb-member-card .third-card{
+        width: 90%; /* Make all cards the same width on mobile */
+        max-width: 300px;
+        height: auto; /* Allow flexible height */
+    }
+
+    .eb-member-card-img {
+        height: 250px; /* Consistent height for images */
+    }
+}
