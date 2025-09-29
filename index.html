@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Stories — Space Weather Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">Stellar Stories</h1>
+                <div class="header-controls">
+                    <div class="current-time" id="currentTime"></div>
+                    <button class="refresh-btn" id="refreshBtn" aria-label="Refresh data">
+                        <svg class="refresh-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4V10H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 20V14H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 4L20 4L20 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4 20L4 14L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="cards-grid">
+                <!-- Solar Flares Card -->
+                <article class="card" role="region" aria-label="Solar Flares Status" id="solarFlareCard">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M4.22 4.22L5.64 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M18.36 18.36L19.78 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M4.22 19.78L5.64 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M18.36 5.64L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="card-title">Solar Flares</div>
+                        <div class="severity-pill" id="solarFlareSeverity">Calm</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="primary-value" id="solarFlareClass">C1.2</div>
+                        <div class="secondary-info" id="solarFlareInfo">Peak flux: 1.2 ×10⁻⁶ W/m² • Region AR12345</div>
+                    </div>
+                    <div class="severity-bar" id="solarFlareBar"></div>
+                </article>
+
+                <!-- Geomagnetic Storm Card -->
+                <article class="card" role="region" aria-label="Geomagnetic Storm Level" id="kpCard">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L3.09 8.26L4 21L12 17L20 21L20.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="card-title">Geomagnetic Storm</div>
+                        <div class="severity-pill" id="kpSeverity">Strong</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="primary-value">Kp: <span id="kpValue">5</span></div>
+                        <div class="secondary-info" id="kpInfo">Strong geomagnetic activity</div>
+                        <div class="kp-scale">
+                            <div class="kp-scale-bar">
+                                <div class="kp-marker" id="kpMarker"></div>
+                            </div>
+                            <div class="kp-scale-labels">
+                                <span>0</span>
+                                <span>3</span>
+                                <span>6</span>
+                                <span>9</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Aurora Chance Card -->
+                <article class="card" role="region" aria-label="Aurora Visibility Chance" id="auroraCard">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 12C2 6.5 6.5 2 12 2S22 6.5 22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M2 12C2 17.5 6.5 22 12 22S22 17.5 22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M6 12C6 8.7 8.7 6 12 6S18 8.7 18 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="card-title">Aurora Chance</div>
+                        <div class="severity-pill" id="auroraSeverity">High</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="primary-value" id="auroraChance">High</div>
+                        <div class="secondary-info" id="auroraInfo">Visible in high latitude regions tonight</div>
+                        <div class="aurora-map">
+                            <svg viewBox="0 0 100 50" class="hemisphere-map">
+                                <circle cx="50" cy="25" r="20" fill="none" stroke="currentColor" stroke-width="1"/>
+                                <path d="M30 25 Q50 10 70 25" fill="none" stroke="var(--success)" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Last Updated Card -->
+                <article class="card" role="region" aria-label="Data Status and Source" id="statusCard">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="card-title">Data Status</div>
+                        <div class="severity-pill status-pill" id="dataSeverity">Live</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="primary-value" id="lastUpdated">Updated: 7:15 PM, Sep 29, 2025</div>
+                        <div class="secondary-info">
+                            Source: <a href="https://www.swpc.noaa.gov/" target="_blank" rel="noopener">NOAA SWPC</a>
+                        </div>
+                        <div class="sparkline-container" id="sparklineContainer">
+                            <canvas id="sparklineChart" width="200" height="40"></canvas>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="severity-legend">
+                    <span class="legend-item">
+                        <span class="legend-color" style="background: var(--success);"></span>
+                        Calm
+                    </span>
+                    <span class="legend-item">
+                        <span class="legend-color" style="background: var(--warn);"></span>
+                        Minor
+                    </span>
+                    <span class="legend-item">
+                        <span class="legend-color" style="background: var(--orange);"></span>
+                        Strong
+                    </span>
+                    <span class="legend-item">
+                        <span class="legend-color" style="background: var(--danger);"></span>
+                        Severe
+                    </span>
+                </div>
+                <div class="footer-controls">
+                    <button class="toggle-btn" id="motionToggle" aria-label="Toggle animations">
+                        <span class="toggle-label">Reduce Motion</span>
+                        <div class="toggle-switch"></div>
+                    </button>
+                    <button class="toggle-btn" id="dataToggle" aria-label="Toggle data source">
+                        <span class="toggle-label">Mock Data</span>
+                        <div class="toggle-switch"></div>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal for card details -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Details</h2>
+                <button class="modal-close" id="modalClose" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content" id="modalContent">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
