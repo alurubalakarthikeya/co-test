@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-09-29T15:00:00Z",
+  "solarFlares": {
+    "class": "M1.2",
+    "peakFlux": 1.2,
+    "region": "AR12345",
+    "time": "2025-09-29T14:42:00Z"
+  },
+  "kpIndex": 5,
+  "solarWind": {
+    "speed_km_s": 650,
+    "density_p_cc": 5,
+    "bz_nT": -6
+  },
+  "source": "mock"
+}
