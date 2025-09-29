@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Stories - Space Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js will be loaded via fallback in app.js -->
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Stellar Stories</h1>
+            <p class="subtitle">Space Weather Dashboard</p>
+            <div class="last-updated">
+                Last updated: <span id="lastUpdated">Loading...</span>
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <div class="card solar-flare-card">
+                <div class="card-header">
+                    <h2 class="card-title">Solar Flare Status</h2>
+                    <div class="status-indicator" id="solarFlareStatus">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Loading...</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="metric">
+                        <span class="metric-label">Current Level:</span>
+                        <span class="metric-value" id="solarFlareLevel">--</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Peak Today:</span>
+                        <span class="metric-value" id="solarFlarePeak">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card geomagnetic-card">
+                <div class="card-header">
+                    <h2 class="card-title">Geomagnetic Storm</h2>
+                    <div class="kp-index" id="kpIndex">
+                        <span class="kp-value">--</span>
+                        <span class="kp-label">Kp Index</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="storm-level" id="stormLevel">
+                        <span class="level-indicator"></span>
+                        <span class="level-text">Loading...</span>
+                    </div>
+                    <canvas id="kpChart" width="300" height="100" style="display: none;"></canvas>
+                    <div id="kpChartFallback" class="chart-fallback">
+                        <div class="chart-title">24-Hour Kp Index Trend</div>
+                        <div class="chart-bars" id="chartBars"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card aurora-card">
+                <div class="card-header">
+                    <h2 class="card-title">Aurora Forecast</h2>
+                    <div class="aurora-chance" id="auroraChance">
+                        <span class="chance-value">--%</span>
+                        <span class="chance-label">Visibility Chance</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="aurora-locations">
+                        <h3>Best Viewing Locations Today:</h3>
+                        <ul id="auroraLocations">
+                            <li>Loading...</li>
+                        </ul>
+                    </div>
+                    <div class="aurora-time">
+                        <span class="time-label">Peak Activity:</span>
+                        <span class="time-value" id="auroraPeakTime">--:--</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Data sources: NOAA Space Weather Prediction Center, NASA</p>
+            <div class="data-status" id="dataStatus">
+                <span class="status-indicator live">Live Data</span>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(224, 224, 224, 0.1);
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #64b5f6;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(100, 181, 246, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #90a4ae;
+    margin-bottom: 15px;
+}
+
+.last-updated {
+    font-size: 0.9rem;
+    color: #757575;
+}
+
+/* Dashboard Grid */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Card Styles */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+/* Status Indicators */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+    animation: pulse 2s infinite;
+}
+
+.status-dot.warning {
+    background: #ff9800;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+}
+
+.status-dot.danger {
+    background: #f44336;
+    box-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
+}
+
+.status-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Card Content */
+.card-content {
+    space-y: 15px;
+}
+
+.metric {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.metric-label {
+    color: #90a4ae;
+    font-size: 0.9rem;
+}
+
+.metric-value {
+    font-weight: 600;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+/* Kp Index Styles */
+.kp-index {
+    text-align: center;
+    padding: 10px;
+    background: rgba(100, 181, 246, 0.1);
+    border-radius: 8px;
+}
+
+.kp-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #64b5f6;
+}
+
+.kp-label {
+    font-size: 0.8rem;
+    color: #90a4ae;
+}
+
+/* Storm Level */
+.storm-level {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.level-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #4caf50;
+}
+
+.level-indicator.minor {
+    background: #ff9800;
+}
+
+.level-indicator.moderate {
+    background: #ff5722;
+}
+
+.level-indicator.strong {
+    background: #f44336;
+}
+
+.level-indicator.severe {
+    background: #9c27b0;
+}
+
+.level-text {
+    font-weight: 500;
+}
+
+/* Aurora Styles */
+.aurora-chance {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #4caf50, #8bc34a);
+    border-radius: 8px;
+    color: white;
+}
+
+.chance-value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.chance-label {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.aurora-locations h3 {
+    color: #90a4ae;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.aurora-locations ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.aurora-locations li {
+    padding: 5px 0;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+}
+
+.aurora-locations li:before {
+    content: "📍 ";
+    margin-right: 8px;
+}
+
+.aurora-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.time-label {
+    color: #90a4ae;
+    font-size: 0.9rem;
+}
+
+.time-value {
+    font-weight: 600;
+    color: #64b5f6;
+    font-size: 1.1rem;
+}
+
+/* Chart Fallback Styles */
+.chart-fallback {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.chart-title {
+    font-size: 0.9rem;
+    color: #90a4ae;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.chart-bars {
+    display: flex;
+    align-items: end;
+    height: 80px;
+    gap: 3px;
+    justify-content: space-between;
+}
+
+.chart-bar {
+    flex: 1;
+    background: linear-gradient(to top, #64b5f6, rgba(100, 181, 246, 0.3));
+    border-radius: 2px 2px 0 0;
+    min-height: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.chart-bar:hover {
+    background: linear-gradient(to top, #42a5f5, rgba(66, 165, 245, 0.5));
+}
+
+.chart-bar.warning {
+    background: linear-gradient(to top, #ff9800, rgba(255, 152, 0, 0.3));
+}
+
+.chart-bar.danger {
+    background: linear-gradient(to top, #f44336, rgba(244, 67, 54, 0.3));
+}
+
+.chart-bar-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+}
+
+.chart-bar:hover .chart-bar-tooltip {
+    opacity: 1;
+}
+
+/* Chart Styles */
+#kpChart {
+    margin-top: 15px;
+    max-width: 100%;
+    height: auto !important;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #757575;
+    font-size: 0.9rem;
+}
+
+.data-status {
+    margin-top: 10px;
+}
+
+.data-status .status-indicator {
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.data-status .live {
+    color: #4caf50;
+}
+
+.data-status .cached {
+    color: #ff9800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .title {
+        font-size: 2.2rem;
+    }
+    
+    .dashboard {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 15px;
+    }
+}
+
+/* Special Effects */
+.solar-flare-card {
+    border-left: 3px solid #ff9800;
+}
+
+.geomagnetic-card {
+    border-left: 3px solid #64b5f6;
+}
+
+.aurora-card {
+    border-left: 3px solid #4caf50;
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0.6;
+    animation: fadeInOut 1.5s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
